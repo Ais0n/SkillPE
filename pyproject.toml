@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "skillpe-research"
+version = "0.1.0"
+description = "Consolidated SkillPE experimental implementation"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+analysis = ["numpy>=1.24", "scipy>=1.10"]
+retrieval = ["torch>=2.3", "transformers>=4.51", "accelerate>=1.0"]
+baselines = ["torch>=2.3", "transformers>=4.51", "accelerate>=1.0", "sentence-transformers>=3", "networkx>=3", "diffusers>=0.30", "safetensors>=0.4", "Pillow>=10"]
+
+[tool.setuptools]
+packages = ["skillpe"]

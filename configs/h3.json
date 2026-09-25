@@ -1,0 +1,12 @@
+{
+  "backbone": "h3",
+  "generation_seed": 0,
+  "judge_model": "gemini-3.1-pro-preview",
+  "generation": {"model": "MiniMax-H3-Base-FL2VA", "job_timeout": 3600},
+  "baselines": {
+    "vpo": {"repo": "external/VPO-5B-deploy", "checkpoint": "models/VPO-5B"},
+    "prompt_a_video": {"repo": "external/Prompt-A-Video", "checkpoint": "models/Prompt_A_Video_CV"},
+    "mora": {"checkpoint": "models/stable-diffusion-xl-base-1.0"},
+    "rapo": {"repo": "external/RAPO", "assets": "models/RAPO"}
+  }
+}

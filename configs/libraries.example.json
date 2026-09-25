@@ -1,0 +1,6 @@
+{
+  "seed": "artifacts/normalized_seed",
+  "top": "runs/selected/top.json",
+  "top2": "runs/selected/top2.json",
+  "overall": "runs/selected/overall.json"
+}

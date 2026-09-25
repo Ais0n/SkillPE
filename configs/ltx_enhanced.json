@@ -1,0 +1,24 @@
+{
+  "backbone": "ltx",
+  "generation_seed": 0,
+  "judge_model": "gemini-3.1-pro-preview",
+  "generation": {
+    "enhance_prompt": true,
+    "distilled_sigmas": [1.0, 0.99375, 0.9875, 0.98125, 0.975, 0.909375, 0.725, 0.421875, 0.0],
+    "stage2_sigmas": [0.909375, 0.725, 0.421875, 0.0],
+    "weights": {
+      "transformer": "models/ltx/ltx-2.5-22b-distilled-transformer-bf16.safetensors",
+      "text_encoder": "models/ltx/gemma4-12b-with-proj-ltx-2.5-bf16.safetensors",
+      "video_vae": "models/ltx/ltx-2.5-video-vae-bf16.safetensors",
+      "audio_vae": "models/ltx/ltx-2.5-audio-vae-bf16.safetensors",
+      "spatial_upsampler": "models/ltx/ltx-2.5-latent-spatial-upscaler-x2-bf16-1.0.safetensors",
+      "prompt_enhancer": "models/gemma-3-12b-it"
+    }
+  },
+  "baselines": {
+    "vpo": {"repo": "external/VPO-5B-deploy", "checkpoint": "models/VPO-5B"},
+    "prompt_a_video": {"repo": "external/Prompt-A-Video", "checkpoint": "models/Prompt_A_Video_CV"},
+    "mora": {"checkpoint": "models/stable-diffusion-xl-base-1.0"},
+    "rapo": {"repo": "external/RAPO", "assets": "models/RAPO"}
+  }
+}
