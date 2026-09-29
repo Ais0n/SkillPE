@@ -19,8 +19,6 @@
 
 ## Method
 
-![SkillPE pipeline: expert-authored skills are normalized, evolved using resonator, dissonant, and divergent film references, then assessed on generated videos to build skill libraries.](assets/skillpe-method.jpg)
-
 Each skill captures shot logic and generation-ready details such as composition,
 camera movement, lighting, timing and sound. Reference clips play three roles:
 resonators reinforce useful matches, dissonants clarify when a skill should not
