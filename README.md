@@ -38,45 +38,6 @@ annotators, the best SkillPE variant scores **5.97** overall, compared with
 **5.61** for seed-skill prompting. These are cinematic, narrative and creativity
 ratings; benchmark-native metrics are reported separately in the paper.
 
-## Key Findings
-
-1. **Structured skills alone beat all non-skill PE** — Seed-skill prompting (without evolution) already substantially outperforms lexical, retrieval, and agentic baselines on cinematic quality, narrative appeal, and creativity.
-2. **Reference-guided evolution adds consistent gains** — Three-way references (resonators, dissonants, divergents) plus video-based assessed selection produce further improvements; SkillPE Top Overall achieves the highest scores on both StoryEval and VBench across two video backbones.
-3. **Divergent evolution reveals a fidelity–creativity trade-off** — As mutation magnitude increases, creativity rises monotonically while prompt fidelity decreases, motivating the assessed-selection stage to balance conservative and exploratory strategies.
-4. **Gains are not explained by prompt length** — In a budget-controlled ablation (100–800 words), skill-based methods consistently outperform direct LLM rewriting at every budget; SkillPE already leads at 100 words and the advantage persists or grows.
-5. **A blinded human study confirms automatic evaluation** — Ten annotators rate all three final SkillPE libraries significantly above seed skills (p < 0.05, Holm-corrected), with Top Creativity reaching **5.97** overall vs. **5.61** for seed skills and **4.86** for the best non-skill baseline.
-6. **SkillPE improves cinematic realization, not generic metrics** — The gains concentrate in cinematic quality, narrative appeal, and creativity; benchmark-native official scores remain competitive but are not the primary target.
-
-## Repository Contents
-
-```
-SkillPE/
-├── skillpe/                       # experiment orchestration, PE, generation, scoring, selection
-│   ├── pipeline.py                   # end-to-end pipeline
-│   ├── pe.py                         # prompt engineering logic
-│   ├── generation.py                 # video backend integration
-│   ├── evaluation.py                 # scoring & assessment
-│   └── selection.py                  # skill-library selection
-├── artifacts/
-│   ├── expert_authored/              # 20 expert-authored seed skills
-│   └── normalized_seed/             # 20 normalized, generation-oriented skills
-├── configs/                          # example MiniMax-H3 and LTX-2.5 settings
-│   ├── h3.json
-│   ├── ltx_enhanced.json
-│   └── libraries.example.json
-├── prompts/                          # prompt templates for skill evolution & evaluation
-│   ├── normalize.md
-│   ├── divergent.md
-│   ├── reflection.md
-│   ├── evaluation/
-│   └── reference/
-├── tools/                            # release-checking utilities
-├── tests/                            # unit tests
-├── assets/                           # method overview & result figures
-├── env.example                       # environment variable configuration
-└── pyproject.toml                    # package metadata & dependencies
-```
-
 ## Quick Start
 
 Requires Python 3.10 or newer. Install FFmpeg and FFprobe for video workflows.
