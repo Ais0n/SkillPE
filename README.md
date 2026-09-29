@@ -2,7 +2,7 @@
 
 **Creativity-oriented cinematic skill evolution for text-to-video prompt engineering.**
 
-[Project page](https://yhuang.top/spe_webpage/) · Paper: coming soon · Citation: coming soon
+[Paper](https://arxiv.org/abs/2609.34335) · [Code](https://github.com/Ais0n/SkillPE) · [Project page](https://yhuang.top/spe_webpage/)
 
 SkillPE turns filmmaking knowledge into reusable, structured skills for prompt
 engineering. It evolves expert-authored cinematic skills using movie references,
@@ -60,9 +60,9 @@ cross-host `flock`.
 
 ## Citation
 
-Paper and citation details are coming soon. The repository includes a
-[`CITATION.cff`](CITATION.cff) metadata file; it will be updated with the public
-paper record when available.
+Please cite the arXiv version: [arXiv:2609.34335](https://arxiv.org/abs/2609.34335).
+Machine-readable software citation metadata is available in
+[`CITATION.cff`](CITATION.cff).
 
 ## Project Page
 

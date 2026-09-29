@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: >-
-  The paper citation is coming soon. Once the public paper record is available,
-  cite that record; this metadata describes the accompanying software.
+  If you use this software, please cite the arXiv paper at
+  https://arxiv.org/abs/2609.34335.
 type: software
 title: "SkillPE: Creativity-Oriented Cinematic Skill Evolution for Text-to-Video Prompt Engineering"
 version: 0.1.0
