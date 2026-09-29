@@ -1,14 +1,21 @@
+<div align="center">
+
 # SkillPE
 
-**Creativity-oriented cinematic skill evolution for text-to-video prompt engineering.**
+### Creativity-Oriented Cinematic Skill Evolution for Text-to-Video Prompt Engineering
 
-[Paper](https://arxiv.org/abs/2609.34335) · [Code](https://github.com/Ais0n/SkillPE) · [Project page](https://yhuang.top/spe_webpage/)
+[![Project Page](https://img.shields.io/badge/Project-Page-f16b4f?style=for-the-badge&logo=githubpages&logoColor=white)](https://yhuang.top/spe_webpage/)
+[![Paper](https://img.shields.io/badge/Paper-arXiv%3A2609.34335-17201d?style=for-the-badge&logo=arxiv&logoColor=white)](https://arxiv.org/abs/2609.34335)
+[![Code](https://img.shields.io/badge/Code-GitHub-78a9df?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Ais0n/SkillPE)
 
-SkillPE turns filmmaking knowledge into reusable, structured skills for prompt
-engineering. It evolves expert-authored cinematic skills using movie references,
-then selects skill libraries by assessing the videos they produce. The goal is
-to improve cinematic quality, narrative appeal and creativity while preserving
-the user's requested content.
+![Python](https://img.shields.io/badge/Python-3.10%2B-3B3B3B?logo=python&logoColor=white)
+![PyTorch](https://img.shields.io/badge/PyTorch-2.3%2B-3B3B3B?logo=pytorch&logoColor=white)
+
+</div>
+
+![Overview of SkillPE: expert-authored skills are normalized, evolved using resonator, dissonant, and divergent film references, then assessed on generated videos to build skill libraries.](assets/skillpe-method.jpg)
+
+> **TL;DR.** SkillPE turns filmmaking craft into reusable, evolving skills for text-to-video prompting, improving cinematic quality by up to **+1.40** points over the strongest baseline while keeping the user's intent in frame.
 
 ## Method
 
@@ -33,14 +40,44 @@ annotators, the best SkillPE variant scores **5.97** overall, compared with
 **5.61** for seed-skill prompting. These are cinematic, narrative and creativity
 ratings; benchmark-native metrics are reported separately in the paper.
 
+## Key Findings
+
+1. **Structured skills alone beat all non-skill PE** — Seed-skill prompting (without evolution) already substantially outperforms lexical, retrieval, and agentic baselines on cinematic quality, narrative appeal, and creativity.
+2. **Reference-guided evolution adds consistent gains** — Three-way references (resonators, dissonants, divergents) plus video-based assessed selection produce further improvements; SkillPE Top Overall achieves the highest scores on both StoryEval and VBench across two video backbones.
+3. **Divergent evolution reveals a fidelity–creativity trade-off** — As mutation magnitude increases, creativity rises monotonically while prompt fidelity decreases, motivating the assessed-selection stage to balance conservative and exploratory strategies.
+4. **Gains are not explained by prompt length** — In a budget-controlled ablation (100–800 words), skill-based methods consistently outperform direct LLM rewriting at every budget; SkillPE already leads at 100 words and the advantage persists or grows.
+5. **A blinded human study confirms automatic evaluation** — Ten annotators rate all three final SkillPE libraries significantly above seed skills (p < 0.05, Holm-corrected), with Top Creativity reaching **5.97** overall vs. **5.61** for seed skills and **4.86** for the best non-skill baseline.
+6. **SkillPE improves cinematic realization, not generic metrics** — The gains concentrate in cinematic quality, narrative appeal, and creativity; benchmark-native official scores remain competitive but are not the primary target.
+
 ## Repository Contents
 
-- `skillpe/`: experiment orchestration, prompt engineering, generation, scoring
-  and skill-library selection.
-- `artifacts/expert_authored/`: 20 expert-authored seed skills.
-- `artifacts/normalized_seed/`: 20 normalized, generation-oriented skills.
-- `configs/`: example MiniMax-H3 and LTX-2.5 settings.
-- `prompts/`: prompt templates for skill evolution and evaluation.
+```
+SkillPE/
+├── skillpe/                       # experiment orchestration, PE, generation, scoring, selection
+│   ├── pipeline.py                   # end-to-end pipeline
+│   ├── pe.py                         # prompt engineering logic
+│   ├── generation.py                 # video backend integration
+│   ├── evaluation.py                 # scoring & assessment
+│   └── selection.py                  # skill-library selection
+├── artifacts/
+│   ├── expert_authored/              # 20 expert-authored seed skills
+│   └── normalized_seed/             # 20 normalized, generation-oriented skills
+├── configs/                          # example MiniMax-H3 and LTX-2.5 settings
+│   ├── h3.json
+│   ├── ltx_enhanced.json
+│   └── libraries.example.json
+├── prompts/                          # prompt templates for skill evolution & evaluation
+│   ├── normalize.md
+│   ├── divergent.md
+│   ├── reflection.md
+│   ├── evaluation/
+│   └── reference/
+├── tools/                            # release-checking utilities
+├── tests/                            # unit tests
+├── assets/                           # method overview & result figures
+├── env.example                       # environment variable configuration
+└── pyproject.toml                    # package metadata & dependencies
+```
 
 ## Quick Start
 
