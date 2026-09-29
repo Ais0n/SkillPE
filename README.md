@@ -1,5 +1,73 @@
 # SkillPE
 
+**Creativity-oriented cinematic skill evolution for text-to-video prompt engineering.**
+
+[Project page](https://yhuang.top/spe_webpage/) · Paper: coming soon · Citation: coming soon
+
+SkillPE turns filmmaking knowledge into reusable, structured skills for prompt
+engineering. It evolves expert-authored cinematic skills using movie references,
+then selects skill libraries by assessing the videos they produce. The goal is
+to improve cinematic quality, narrative appeal and creativity while preserving
+the user's requested content.
+
+## Method
+
+![SkillPE pipeline: expert-authored skills are normalized, evolved using resonator, dissonant, and divergent film references, then assessed on generated videos to build skill libraries.](assets/skillpe-method.jpg)
+
+Each skill captures shot logic and generation-ready details such as composition,
+camera movement, lighting, timing and sound. Reference clips play three roles:
+resonators reinforce useful matches, dissonants clarify when a skill should not
+apply, and divergents inspire controlled alternatives. Candidate skills are
+assessed on generated videos for prompt fidelity, cinematic quality, narrative
+appeal and creativity.
+
+## Example Results
+
+![Qualitative comparison of raw prompts, seed-skill prompting, and final SkillPE prompting for a car transformation and a book-and-fish scene.](assets/skillpe-results.jpg)
+
+The paper evaluates SkillPE on StoryEval and VBench with MiniMax-H3 and LTX-2.5.
+On the authors' four-dimensional 7-point evaluation, selected libraries improve
+by up to **1.40 points** over the strongest external prompt-engineering baseline
+and **0.51 points** over seed-skill prompting. In a blinded study with ten
+annotators, the best SkillPE variant scores **5.97** overall, compared with
+**5.61** for seed-skill prompting. These are cinematic, narrative and creativity
+ratings; benchmark-native metrics are reported separately in the paper.
+
+## Repository Contents
+
+- `skillpe/`: experiment orchestration, prompt engineering, generation, scoring
+  and skill-library selection.
+- `artifacts/expert_authored/`: 20 expert-authored seed skills.
+- `artifacts/normalized_seed/`: 20 normalized, generation-oriented skills.
+- `configs/`: example MiniMax-H3 and LTX-2.5 settings.
+- `prompts/`: prompt templates for skill evolution and evaluation.
+
+## Quick Start
+
+Requires Python 3.10 or newer. Install FFmpeg and FFprobe for video workflows.
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
+python -m pip install -e .
+python -m skillpe --help
+```
+
+Model services, checkpoints and benchmark inputs are not bundled. See the
+[installation and experiment guide](#installation) and [`env.example`](env.example)
+for configuration. Multi-machine runs require a shared filesystem that supports
+cross-host `flock`.
+
+## Citation
+
+Paper and citation details are coming soon. The repository includes a
+[`CITATION.cff`](CITATION.cff) metadata file; it will be updated with the public
+paper record when available.
+
+## Project Page
+
+More project information and video examples: [yhuang.top/spe_webpage](https://yhuang.top/spe_webpage/).
+
 ## Installation
 
 Run commands from this directory using Python 3.10+ on Linux. Install FFmpeg and

@@ -1,0 +1,35 @@
+cff-version: 1.2.0
+message: >-
+  The paper citation is coming soon. Once the public paper record is available,
+  cite that record; this metadata describes the accompanying software.
+type: software
+title: "SkillPE: Creativity-Oriented Cinematic Skill Evolution for Text-to-Video Prompt Engineering"
+version: 0.1.0
+abstract: >-
+  SkillPE evolves reusable cinematic skills for text-to-video prompt engineering
+  using structured representations, reference-guided evolution, and assessment
+  of generated videos.
+keywords:
+  - text-to-video generation
+  - prompt engineering
+  - cinematic skills
+  - video generation
+  - skill evolution
+authors:
+  - family-names: Huang
+    given-names: Yanwei
+    affiliation: HKUST
+  - family-names: Liu
+    given-names: Shiyuan
+    affiliation: Kuaishou Technology
+  - family-names: Wan
+    given-names: Pengfei
+    affiliation: Kuaishou Technology
+  - family-names: Zhang
+    given-names: Yuanxing
+    affiliation: Kuaishou Technology
+  - family-names: Narechania
+    given-names: Arpit
+    affiliation: HKUST
+repository-code: "https://github.com/Ais0n/SkillPE"
+url: "https://yhuang.top/spe_webpage/"

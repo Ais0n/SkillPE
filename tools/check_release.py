@@ -7,6 +7,10 @@ import re
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
+PUBLICITY_IMAGES = {
+    'assets/skillpe-method.jpg',
+    'assets/skillpe-results.jpg',
+}
 
 
 def check():
@@ -19,6 +23,8 @@ def check():
         'private_key': re.compile(r'-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----'),
     }
     for path in sorted(ROOT.rglob('*')):
+        if '.git' in path.parts:
+            continue
         relative = str(path.relative_to(ROOT))
         if path.is_symlink():
             errors.append((relative,'symlink'))
@@ -29,6 +35,9 @@ def check():
             errors.append((relative,'generated_bytecode'))
             continue
         raw=path.read_bytes()
+        if relative in PUBLICITY_IMAGES and path.suffix == '.jpg':
+            hashes[relative]=hashlib.sha256(raw).hexdigest()
+            continue
         try:
             text=raw.decode('utf-8')
         except UnicodeDecodeError:
