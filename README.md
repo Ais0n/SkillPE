@@ -13,7 +13,7 @@
 
 </div>
 
-![Overview of SkillPE: expert-authored skills are normalized, evolved using resonator, dissonant, and divergent film references, then assessed on generated videos to build skill libraries.](assets/skillpe-method.jpg)
+![Overview of SkillPE: expert-authored skills are normalized, evolved using resonator, dissonant, and divergent film references, then assessed on generated videos to build skill libraries.](assets/new_pipeline_0909.png)
 
 > **TL;DR.** SkillPE turns filmmaking craft into reusable, evolving skills for text-to-video prompting, improving cinematic quality by up to **+1.40** points over the strongest baseline while keeping the user's intent in frame.
 
